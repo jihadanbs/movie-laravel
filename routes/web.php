@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Middleware\CheckMembership;
+// use App\Http\Middleware\CheckMembership;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('/movie', function () {
     return 'movie';
-})->middleware(CheckMembership::class);
+})->middleware('isMember');
 
 Route::get('/pricing', function () {
     return 'please, buy a membership';
