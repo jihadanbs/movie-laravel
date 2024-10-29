@@ -1,6 +1,7 @@
 <?php
 
 // use App\Http\Middleware\CheckMembership;
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,9 +28,7 @@ Route::group([
     'as' => 'movie'
 ], function () use ($movie) {
 
-    Route::get('/', function () use ($movie) {
-        return $movie;
-    });
+    Route::get('/', [MovieController::class, 'index']);
 
     Route::get('/{id}', function ($id) use ($movie) {
         return $movie[$id];
