@@ -16,7 +16,8 @@ return Application::configure(basePath: dirname(__DIR__))
         // agar tidak perlu memanggil middleware manual di controller
         // lebih clean
         $middleware->alias([
-            'isMember' => \App\Http\Middleware\CheckMembership::class
+            'isMember' => \App\Http\Middleware\CheckMembership::class,
+            'isAuth' => \App\Http\Middleware\IsAuth::class
         ]);
 
         $middleware->validateCsrfTokens(except: [
