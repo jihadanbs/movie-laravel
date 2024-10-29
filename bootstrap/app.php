@@ -11,7 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-
+        // catatan
         // untuk pemanggilan middleware yang ada di class CheckMembership
         // agar tidak perlu memanggil middleware manual di controller
         // lebih clean
